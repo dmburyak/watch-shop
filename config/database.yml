@@ -1,0 +1,17 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
+  username: shop
+  password: shop
+  host: localhost
+  port: 5432
+
+development:
+  <<: *default
+  database: watch_shop_development
+
+test:
+  <<: *default
+  database: watch_shop_test
